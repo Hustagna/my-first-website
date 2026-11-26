@@ -1,18 +1,281 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hustagna Hiya - My Website</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f0ff;
+            margin: 0;
+            padding: 40px 20px;
+            color: #252545;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #6545c5;
+            text-align: center;
+        }
+
+        h2 {
+            color: #6545c5;
+            border-bottom: 2px solid #ddd4ff;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #6545c5;
+        }
+
+        p {
+            color: #252545;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto;
+            padding: 13px 35px;
+            background-color: #6545c5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #42269c;
+        }
+
+        #aboutMe {
+            display: none;
+            margin-top: 35px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skills span {
+            display: inline-block;
+            background-color: #eee8ff;
+            color: #6545c5;
+            padding: 9px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .quote {
+            background-color: #eee8ff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .quote p {
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 35px;
+            color: #626985;
+            border-top: 1px solid #ddd4ff;
+            padding-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-    <h1>Hello World!</h1>
+    <div class="container">
 
-    <h2>Welcome to My Website</h2>
+        <h1>Hello World!</h1>
 
-    <p>Hello, I'am Hustagna. I am currently studying at Jahangirnagar University. I am learning web development. Welcome to my personal website.</p>
+        <h2 style="text-align:center;">
+            Welcome to My Website
+        </h2>
 
-    <button>Click Me</button>
+        <p style="text-align:center;">
+            I am learning web development.
+        </p>
+
+        <button onclick="showAboutMe()" id="myButton">
+            Click Me
+        </button>
+
+
+        <div id="aboutMe">
+
+            <h1>About Me</h1>
+
+            <p>
+                Hello! I'm <b>Hustagna Hiya</b>, an undergraduate
+                student at the Institute of Information Technology
+                (IIT), Jahangirnagar University, Bangladesh.
+                I am currently in my <b>3rd Year, 1st Semester</b>.
+            </p>
+
+
+            <h2>Education</h2>
+
+            <p>
+                I am pursuing my undergraduate degree at
+                Jahangirnagar University. Throughout my academic
+                journey, I have been exploring different areas
+                of computer science and technology.
+            </p>
+
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                I have basic knowledge of several programming
+                languages, including:
+            </p>
+
+            <div class="skills">
+                <span>C</span>
+                <span>C++</span>
+                <span>Java</span>
+                <span>Python</span>
+            </div>
+
+
+            <h2>Project Experience</h2>
+
+            <p>
+                During my second year, I participated in academic
+                software development projects as part of a team.
+                We completed projects in both the 2nd Year,
+                1st Semester and 2nd Year, 2nd Semester.
+
+                These experiences helped me understand teamwork
+                and the process of developing software
+                collaboratively.
+            </p>
+
+
+            <h2>My Learning Journey</h2>
+
+            <p>
+                Although I have worked on team projects, I have
+                never independently developed a website before.
+                Now, I want to challenge myself by building
+                something of my own.
+
+                I am interested in learning web development,
+                exploring new technologies, and gaining
+                practical experience.
+            </p>
+
+
+            <h2>My Goals</h2>
+
+            <p>
+                My current goal is to develop my own website,
+                improve my programming skills, and gradually
+                become more confident in software development.
+            </p>
+
+
+            <div class="quote">
+
+                <h3>My Inspiration</h3>
+
+                <p>
+                    I believe every new journey begins with
+                    a small step. I am excited to start this
+                    journey and learn something new every day.
+                </p>
+
+                <h3>
+                    In Sha Allah, this is just the beginning!
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            Made by Hustagna Hiya | 2026
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        function showAboutMe() {
+
+            let about = document.getElementById("aboutMe");
+
+            let button = document.getElementById("myButton");
+
+            if (getComputedStyle(about).display === "none") {
+
+                about.style.display = "block";
+
+                button.innerHTML = "Hide About Me";
+
+            }
+
+            else {
+
+                about.style.display = "none";
+
+                button.innerHTML = "Click Me";
+
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>
